@@ -44,7 +44,9 @@
 
 
     /* PAGE HEADER */
-    .page-header{background:var(--green-dark);padding:8rem 5vw 4rem;text-align:center}
+    .page-header{background:var(--green-dark);padding:8rem 5vw 4rem;text-align:center;position:relative;overflow:hidden}
+    .ph-bg{position:absolute;inset:0;background-image:linear-gradient(to bottom,rgba(36,64,51,.88) 0%,rgba(36,64,51,.70) 100%),url('img/almuerzo.webp');background-size:cover;background-position:center}
+    .ph-content-wrap{position:relative;z-index:2}
     .page-header h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:var(--white);font-weight:400;margin-bottom:.75rem}
     .page-header p{color:rgba(255,255,255,.5);font-size:.95rem;font-weight:300;max-width:500px;margin:0 auto}
 
@@ -133,9 +135,12 @@
 </div>
 
 <div class="page-header">
+  <div class="ph-bg"></div>
+  <div class="ph-content-wrap">
   <span class="section-label" style="color:var(--sage-pale)">Lo que servimos</span>
   <h1>Nuestro Menú</h1>
   <p>Platos caseros con los mejores ingredientes, disponibles en todos los horarios del día.</p>
+  </div>
 </div>
 
 <div class="menu-tabs-wrap">
@@ -215,7 +220,7 @@
   <div class="footer-contact">
     <strong>Green Garden</strong>
     <a href="tel:02214895239">📞 0221-489-5239</a>
-    <a href="/cdn-cgi/l/email-protection#a3c4d1c6c6cdc4c2d1c7c6cdcfc2d3cfc2d7c2e3c4cec2cacf8dc0ccce">✉️ <span class="__cf_email__" data-cfemail="d6b1a4b3b3b8b1b7a4b2b3b8bab7a6bab7a2b796b1bbb7bfbaf8b5b9bb"><span class="__cf_email__" data-cfemail="93f4e1f6f6fdf4f2e1f7f6fdfff2e3fff2e7f2d3f4fef2faffbdf0fcfe"><span class="__cf_email__" data-cfemail="fb9c899e9e959c9a899f9e95979a8b979a8f9abb9c969a9297d5989496">[email&#160;protected]</span></span></span></a>
+    <a href="mailto:greengardenlaplata@gmail.com">greengardenlaplata@gmail.com</a>
     <a href="https://instagram.com/greengardenlaplata" target="_blank">📷 @greengardenlaplata</a>
   </div>
   <div class="footer-right">
@@ -235,11 +240,4 @@ tabs.forEach(btn => {
     blocks.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(btn.dataset.tab).classList.add('active');
-    lightbox = GLightbox({selector:'.glightbox',loop:true,touchNavigation:true,keyboardNavigation:true,closeOnOutsideClick:true});
-  });
-});
-document.getElementById('ham').addEventListener('click',()=>document.getElementById('mobMenu').classList.toggle('open'));
-function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
-</script>
-</body>
-</html>
+    lightbox = GLightbox({selector:'.glightbox',loop:true,touchNavigation:true,keyboardNavigation:true,close
