@@ -415,4 +415,16 @@
     <p style="margin-top:.5rem;font-size:.75rem">© 2026 Green Garden · Desarrollado por <a href="https://www.martinromero.com.ar" target="_blank" rel="noopener noreferrer">Martin Romero</a></p>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/s
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>60);
+});
+document.getElementById('ham').addEventListener('click',()=>{
+  document.getElementById('mobMenu').classList.toggle('open');
+});
+function closeMob(){
+  document.getElementById('mobMenu').classList.remove('open');
+}
+</script>
+</body>
+</html>

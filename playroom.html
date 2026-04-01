@@ -251,4 +251,16 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded',()=>{GLightbox({selector:'.glightbox',loop:true,touchNavigation:tr
+document.addEventListener('DOMContentLoaded', function() {
+  GLightbox({selector:'.glightbox', loop:true, touchNavigation:true, keyboardNavigation:true});
+});
+
+document.getElementById('ham').addEventListener('click',()=>{
+  document.getElementById('mobMenu').classList.toggle('open');
+});
+function closeMob(){
+  document.getElementById('mobMenu').classList.remove('open');
+}
+</script>
+</body>
+</html>
